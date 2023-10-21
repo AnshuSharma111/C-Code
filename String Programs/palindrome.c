@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// To check if a given input is a palindrome or not
-
+// To check if a given string is a palindrome or not
 int main(){
     char inp[100], pal[100];
 
