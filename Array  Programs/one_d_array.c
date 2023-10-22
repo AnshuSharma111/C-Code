@@ -4,7 +4,6 @@
 // All about 1D arrays
 
 void display(int array[], int size){
-    printf("%d\n", size);
     for(int i = 0; i<size; i++){
         printf("%d\t", array[i]);
     }
@@ -13,7 +12,7 @@ void display(int array[], int size){
 
 // adding element to array
 void append(int array[], int size){
-    int position, value, temp;
+    int position, value;
     printf("Enter element you want to enter: ");
     scanf("%d", &value);
     printf("Enter position you want to enter element at: ");
@@ -40,7 +39,7 @@ int main(){
     printf("Enter how many elements you want in the array : ");
     scanf("%d", &n);
     for(int i =0; i<n; i++){
-        printf("Enter element %d:", i+1);
+        printf("Enter element %d:");
         scanf("%d", &arr[i]);
     }
 
