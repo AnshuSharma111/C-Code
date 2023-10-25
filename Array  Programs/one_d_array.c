@@ -68,4 +68,6 @@ int main(){
             break;
         }
     }
+    free(arr);
+    return 0;
 }
