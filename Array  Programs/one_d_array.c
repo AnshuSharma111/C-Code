@@ -31,6 +31,18 @@ void deletion(int array[], int size){
         array[i-1] = array[i];
     }
 }
+
+void search(int array[], int size, int element){
+    int found = 0;
+    for(int i =0; i<size; i++){
+        if (array[i] == element){
+            printf("The value %d lies at position %d\n", array[i], i);
+            found = 1;
+            break;
+        }
+    }
+    found == 0 ? printf("Element not found in array!\n") : printf("");
+}
 int main(){
     // Declaring an array that is of dynamic size using malloc()
     int *arr = (int*) malloc(100 * sizeof(int));
@@ -39,13 +51,13 @@ int main(){
     printf("Enter how many elements you want in the array : ");
     scanf("%d", &n);
     for(int i =0; i<n; i++){
-        printf("Enter element %d:");
+        printf("Enter element %d:", i+1);
         scanf("%d", &arr[i]);
     }
 
-    int choice, out=0;
+    int choice, out=0, value;
     while (out == 0){
-        printf("What operation to perform on array?\n1) Display Array\n2) Add element to array\n3) Delete element from array\n4) Exit\nEnter Choice: ");
+        printf("What operation to perform on array?\n1) Display Array\n2) Add element to array\n3) Delete element from array\n4) Search\n5) Exit\nEnter Choice: ");
         scanf("%d", &choice);
         switch (choice)
         {
@@ -61,6 +73,11 @@ int main(){
             n -= 1;
             break;
         case 4:
+            printf("Enter value to search for: ");
+            scanf("%d", &value);
+            search(arr, n, value);
+            break;
+        case 5:
             out = 1;
             break;
         default:
