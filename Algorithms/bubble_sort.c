@@ -25,5 +25,20 @@ int main(){
     for(int i = 0; i<size; i++){
         printf("%d\t", arr[i]);
     }
+
+    for(int i =0; i<size-1; i++){
+        for (int j =0; j<size-i; j++){
+            if (arr[j] < arr[j+1]){
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+
+    printf("Sorted Array in descending order is: \n");
+    for(int i = 0; i<size; i++){
+        printf("%d\t", arr[i]);
+    }
     return 0;
 }
