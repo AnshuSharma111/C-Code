@@ -36,7 +36,7 @@ int main(){
         }
     }
 
-    printf("Sorted Array in descending order is: \n");
+    printf("\nSorted Array in descending order is: \n");
     for(int i = 0; i<size; i++){
         printf("%d\t", arr[i]);
     }
