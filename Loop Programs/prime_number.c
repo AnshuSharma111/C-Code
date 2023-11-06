@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// To check if a given number is prime or not
+
 int main(){
     int num, is_prime = 1;
     printf("Enter a number : ");

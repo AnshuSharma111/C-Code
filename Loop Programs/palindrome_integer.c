@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 // To check whether the entered integer is a palindrome or not
+
 int main(){
     int num, r_temp, r, rev=0;
     printf("Enter number to check palindromity of: ");
