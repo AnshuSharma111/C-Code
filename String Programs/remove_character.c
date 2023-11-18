@@ -5,14 +5,14 @@
 
 int main(){
     char *s = (char*) calloc(1024,sizeof(char));
-    int c;
+    char c;
     printf("ENter string: ");
     scanf("%[^\n]%*c", s);
     printf("Enter character to remove: ");
-    scanf("%d", &c);
+    scanf("%c", &c);
     int i = 0;
     while(*(s+i) != '\0'){
-        if ((int)*(s+i) == c){
+        if ((int)*(s+i) == (int)c){
             for(int j = i; *(s+j) != '\0'; j++){
                 *(s+j) = *(s+j+1);
             }
