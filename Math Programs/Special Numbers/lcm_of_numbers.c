@@ -3,19 +3,18 @@
 
 // Program to find Least Common Multiple of two numbers
 
-void lcm(int *arr, int size){
-    int lcm, i=1, c=0;
-    while(1>0){
-        for(int j = 1; j<size; j++){
-            if ((*arr * i) % *(arr + j) == 0)
-            c++;
-        }
+int GCD(int a, int b){
+    if (b == 0)
+    return a;
+    else
+    GCD(b, a%b);
+}
 
-        if (c == size-1){
-            lcm = *arr * i;
-            break;
-        }
-        i++;
+void lcm(int *arr, int size){
+    int lcm = *arr, gcd = *arr;
+    for (int i =0; i<size; i++){
+        gcd = GCD(*(arr+i), lcm);
+        lcm = (lcm * *(arr+i))/gcd;
     }
     printf("\nThe LCM of the following values is: %d", lcm);
 }
@@ -33,5 +32,7 @@ int main(){
     scanf("%d", arr+i);
 
     lcm(arr, size);
+
+    free(arr);
     return 0;
 }
