@@ -9,7 +9,7 @@ int main(){
     scanf("%f %f", &l, &b);
 
     printf("The perimeter of the rectangle is: %0.2f\n", 2*(l+b));
-    printf("The arae of the rectangle is: %0.2f\n", l*b);
+    printf("The area of the rectangle is: %0.2f\n", l*b);
     printf("The diagonal of the rectangle is: %0.2f", sqrt(pow(l,2) + pow(b,2)));
     return 0;
 }
