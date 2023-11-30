@@ -3,20 +3,22 @@
 // Program to print a pyrimidal pattern
 
 int main(){
-    int size;
+    int base;
     printf("Enter size of pyramid base: ");
-    scanf("%d", &size);
+    scanf("%d", &base);
 
-    int i,k,j;
+    int height = (base / 2) + 1;
 
-    for(i=0; i<size; i++){
-        for(k = size/2 +1; k<size-i; k++){
+    int i = 0, j = 0, k =0, l =0;
+    for(i; i < height; i++){
+        int stars = 1 + 2*i;
+        for(j = 0; j < (base - stars) / 2; j++){
             printf(" ");
         }
-        for(j=0; j<i; j++){
+        for(k = 0; k<stars; k++){
             printf("*");
         }
-        for(k = size/2 +1; k<size-i; k++){
+        for(l; l < (base - stars)/ 2; l++){
             printf(" ");
         }
         printf("\n");
