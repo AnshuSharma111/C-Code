@@ -10,6 +10,6 @@ int main(){
     scanf("%f", &radius);
     printf("Assuming the radius to be in centimeters: \n");
     printf("The perimeter of the circle is: %0.2fcm\t %0.2fmm\t%0.2fm\n", 2 * PI * radius, 2 * PI * radius * 10, 2 * PI * radius * 0.01);
-    printf("The area of the circle is: %0.2fcm\t%0.2fmm\t%0.2f", PI * radius * radius, 10 *PI * radius * radius, 0.01*PI * radius * radius);
+    printf("The area of the circle is: %0.2fcm\t%0.2fmm\t%0.2fm", PI * radius * radius, 10 *PI * radius * radius, 0.01*PI * radius * radius);
     return 0;
 }
