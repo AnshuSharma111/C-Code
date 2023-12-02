@@ -32,6 +32,7 @@ void deletion(int array[], int size){
     }
 }
 
+// Searching for an element
 void search(int array[], int size, int element){
     int found = 0;
     for(int i =0; i<size; i++){
