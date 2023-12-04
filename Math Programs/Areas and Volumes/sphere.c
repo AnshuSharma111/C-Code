@@ -10,7 +10,7 @@ int main(){
     printf("Enter radius of sphere: ");
     scanf("%f", &radius);
     printf("Assuming the radius to be in centimeters: \n");
-    printf("The surface area of the sphere is: %0.2fcm\t %0.2fmm\t%0.2fm\n", 4 * PI * pow(radius,2) , 4 * PI * pow(radius,2) * 10, 4 * PI * pow(radius,2) * 0.01);
-    printf("The volume of the sphere is: %0.2fcm\t%0.2fmm\t%0.2fm", 1.33 * PI * pow(radius, 3) , 10 * 1.33 * PI * pow(radius, 3), 0.01*1.33 * PI * pow(radius, 3));
+    printf("The surface area of the sphere is: %0.2fcm^2  %0.2fmm^2 %0.2fm^2\n", 4 * PI * pow(radius,2) , 4 * PI * pow(radius,2) * 10, 4 * PI * pow(radius,2) * 0.01);
+    printf("The volume of the sphere is: %0.2fcm^3 %0.2fmm^3 %0.2fm^3", 1.33 * PI * pow(radius, 3) , 10 * 1.33 * PI * pow(radius, 3), 0.01*1.33 * PI * pow(radius, 3));
     return 0;
 }

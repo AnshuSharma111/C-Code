@@ -17,7 +17,7 @@ int main(){
     s = PI * r * (l + r);
 
     printf("Asuuming all entered values to be in centimeters:\n");
-    printf("The slant height of the cone is: %0.2fcm %0.2fm %0.2fdmm\n", l, l/100, l*10);
+    printf("The slant height of the cone is: %0.2fcm %0.2fm %0.2fmm\n", l, l/100, l*10);
     printf("The surface area of the cone is: %0.2fcm^2 %0.2fm^2 %0.2fmm^2\n", s, s/100, s*10);
     printf("The volume of the cone is: %0.2fcm^3 %0.2fm^3 %0.2fmm^3", v, v/100, v*10);
 

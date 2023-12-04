@@ -8,8 +8,8 @@ int main(){
     printf("Enter length and breadth of the rectangle: ");
     scanf("%f %f", &l, &b);
 
-    printf("The perimeter of the rectangle is: %0.2f\n", 2*(l+b));
-    printf("The area of the rectangle is: %0.2f\n", l*b);
-    printf("The diagonal of the rectangle is: %0.2f", sqrt(pow(l,2) + pow(b,2)));
+    printf("The perimeter of the rectangle is: %0.2fcm\n", 2*(l+b));
+    printf("The area of the rectangle is: %0.2fcm^2\n", l*b);
+    printf("The diagonal of the rectangle is: %0.2fcm", sqrt(pow(l,2) + pow(b,2)));
     return 0;
 }
