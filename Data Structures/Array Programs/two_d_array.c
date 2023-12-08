@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 void transpose(int *arr, int r, int c){
-    
 }
 
 int main(){
