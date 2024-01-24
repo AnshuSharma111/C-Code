@@ -7,13 +7,13 @@ struct Node{
     struct Node *next;
 };
 
-struct Node *head; //Defining the head of the linked list as a GLOBAL VARIABLE
-struct Node* insert(struct Node* head, int x, int pos); // Defining the insert function
-void print(struct Node* head); // Function to print the list
+struct Node *head = NULL; //Defining the head of the linked list as a GLOBAL VARIABLE
+void insert(int x, int pos); // Defining the insert function
+void print(); // Function to print the list
 void delete(int ind); // Function to delete a node
+void reverse(); // Reverse linked list
 
 int main(){
-    head = NULL; //first, the linked list is empty
     register int i = 0;
 
     int size, val;
@@ -24,13 +24,13 @@ int main(){
     for (i=0; i<size; i++){
         printf("Enter element: ");
         scanf("%d", &val);
-        head = insert(head, val, 1);
+        insert(val, 1);
     }
 
     int flag = 0, ch, pos;
     
     while(flag == 0){ // Menu driven program
-        printf("Enter what operation do you want to perform on the linked list:\n1)Insert Element\n2)Delte Index\n3)Show list\n4)Exit\nEnter Choice: ");
+        printf("Enter what operation do you want to perform on the linked list:\n1)Insert Element\n2)Delte Index\n3)Show list\n4) Reverse List\n5)Exit\nEnter Choice: ");
         scanf("%d", &ch);
 
         switch (ch)
@@ -40,7 +40,7 @@ int main(){
             scanf("%d", &val);
             printf("Enter position: ");
             scanf("%d", &pos);
-            head = insert(head, val, pos);
+            insert(val, pos);
             print(head);
             break;
         case 2:
@@ -55,6 +55,11 @@ int main(){
             print(head);
             break;
         case 4:
+            reverse();
+            printf("Now the list is: ");
+            print(head);
+            break;
+        case 5:
             flag = 1;
             break;
         default:
@@ -64,14 +69,13 @@ int main(){
     }
 }
 
-struct Node* insert(struct Node* head, int x, int pos){
+void insert(int x, int pos){
     struct Node *temp = (struct Node*) malloc(sizeof(struct Node));
     temp->data = x;
 
     if (pos == 1){
         temp->next = head;
         head = temp;
-        return head;
     }
 
     struct Node *temp2 = head;
@@ -82,14 +86,13 @@ struct Node* insert(struct Node* head, int x, int pos){
 
     temp->next = temp2->next;
     temp2->next = temp;
-
-    return head;
 }
 
-void print(struct Node* head){
-    while (head != NULL){
-        printf("%d ", head->data);
-        head = head->next;
+void print(){
+    struct Node *temp = head;
+    while (temp != NULL){
+        printf("%d ", temp->data);
+        temp = temp->next;
     }
     printf("\n");
 }
@@ -110,5 +113,16 @@ void delete(int ind){
     struct Node* temp = traverse->next; // n-th node
     traverse->next = temp->next; // n-1 th node points to n+1 th node
     free(temp); // free nth node
+}
 
+void reverse(){
+    struct Node *cur = head, *nxt, *prev = NULL;
+
+    while (cur != NULL){
+        cur->next = prev;
+        prev = cur;
+        cur = nxt;
+        nxt = cur->next;
+    }
+    head = prev;
 }
