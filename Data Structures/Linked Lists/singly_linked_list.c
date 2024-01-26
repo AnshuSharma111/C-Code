@@ -7,8 +7,8 @@ struct Node{
     struct Node *next;
 };
 
-struct Node *head = NULL; //Defining the head of the linked list as a GLOBAL VARIABLE
-void insert(int x, int pos); // Defining the insert function
+struct Node *head = NULL; //Declaring the head of the linked list as a GLOBAL VARIABLE
+void insert(int x, int pos); // Declaring the insert function
 void print(); // Function to print the list
 void delete(int ind); // Function to delete a node
 void reverse(); // Reverse linked list
@@ -30,7 +30,7 @@ int main(){
     int flag = 0, ch, pos;
     
     while(flag == 0){ // Menu driven program
-        printf("Enter what operation do you want to perform on the linked list:\n1)Insert Element\n2)Delte Index\n3)Show list\n4) Reverse List\n5)Exit\nEnter Choice: ");
+        printf("Enter what operation do you want to perform on the linked list:\n1)Insert Element\n2)Delte Index\n3)Print list\n4)Reverse List\n5)Exit\nEnter Choice: ");
         scanf("%d", &ch);
 
         switch (ch)
@@ -76,16 +76,15 @@ void insert(int x, int pos){
     if (pos == 1){
         temp->next = head;
         head = temp;
+        return;
     }
 
-    struct Node *temp2 = head;
-    // Traverse to n-1 th node
-    for(int i = 0; i< pos-2; i++){
-        temp2 = temp2->next;
-    }
+    struct Node *tmp2 = head;
+    for(int i = 0; i < pos-2; i++)
+    tmp2 = tmp2->next;
 
-    temp->next = temp2->next;
-    temp2->next = temp;
+    temp->next = tmp2->next;
+    tmp2->next = temp;
 }
 
 void print(){
@@ -119,10 +118,10 @@ void reverse(){
     struct Node *cur = head, *nxt, *prev = NULL;
 
     while (cur != NULL){
+        nxt = cur->next;
         cur->next = prev;
         prev = cur;
         cur = nxt;
-        nxt = cur->next;
     }
     head = prev;
 }
