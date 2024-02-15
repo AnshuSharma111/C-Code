@@ -3,43 +3,42 @@
 
 // C implementation of a doubly linked list
 
-struct Node{
-    struct Node *prev;
+struct Node 
+{
     int data;
-    struct Node *next;
+    struct Node* next;
+    struct Node* prev;
 };
 
-struct Node *head = NULL;
+struct Node* head = NULL;
 
-void insert(int data, int pos);
+struct Node* generateNode(int val);
+void insert(int pos, int val);
 void print();
 
-int main(){
-    insert(45, 1);
-    insert(84, 1);
-    insert(56, 1);
-    insert(23, 1);
-    print();
+int main()
+{
     return 0;
 }
 
-void insert(int data, int pos){
-    struct Node *tmp = (struct Node*) malloc(sizeof(struct Node));
-    tmp->data = data;
+struct Node* generateNode(int val)
+{
+    struct Node* temp = (struct Node*) malloc(sizeof(struct Node));
+    temp->data = val;
+    temp->next = NULL;
+    temp->prev = NULL;
 
-    if (pos == 1){
-        tmp->next = head;
-        head = tmp;
-        tmp->prev = head;
-        tmp->next->prev = tmp;
-        return;
-    }
+    return temp;
 }
 
-void print(){
-    struct Node *tmp = head;
-    while(tmp != NULL){
-        printf("%d ", tmp->data);
-        tmp = tmp->next;
+void insert(int pos, int val)
+{
+    struct Node* temp = generateNode(val);
+    if (pos == 1)
+    {
+        temp->next = head;
+        head->prev = temp;
+        head = temp;
+        return;
     }
 }
